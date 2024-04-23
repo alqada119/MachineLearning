@@ -34,3 +34,16 @@ print(changed.shape) #attribute of np arr is shape
 #to get type of np arr
 print(changed.dtype)
 #np.arr converts to 2d arr
+
+"""
+PART 19 Array Indexing
+"""
+arr=np.arange(0,11)
+print(arr[0])
+#query with bool
+print(arr>5) # prints True for vals in arr are greater than 5
+bool_arr=arr>5
+print(bool_arr)
+print(arr[bool_arr]) #prints true values from original arr
+# called conditional selection
+print(arr[arr<3]) #conditional selection of elements less than 3
