@@ -47,3 +47,11 @@ print(bool_arr)
 print(arr[bool_arr]) #prints true values from original arr
 # called conditional selection
 print(arr[arr<3]) #conditional selection of elements less than 3
+"""
+Excercise
+"""
+test=np.arange(0,50).reshape(5,10) #5rows10cols
+print(test) #lets conditional select 23/24/25
+subsection=test[2]
+subsection=subsection[subsection>22]
+print(subsection[subsection<26])
