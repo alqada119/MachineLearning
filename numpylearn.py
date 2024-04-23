@@ -55,3 +55,11 @@ print(test) #lets conditional select 23/24/25
 subsection=test[2]
 subsection=subsection[subsection>22]
 print(subsection[subsection<26])
+"""
+Part 20:Numpy Operations
+"""
+test2=np.arange(0,11)
+print(test2+test2)
+print(test2+100,test2*100)
+#numpy doesn't provide math errors but warning
+print(np.sin(test2),np.log(test2),np.max(test2)) #math operations supported by numpy
