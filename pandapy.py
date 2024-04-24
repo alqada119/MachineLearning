@@ -53,3 +53,23 @@ print(df.loc["A"])
 print(df.iloc[2]) #basically by number indexing
 print(df.loc["A","X"]) #row,col
 print(df.loc["A"]["X"]) #This also works
+"Part 2 of Data Frame"
+#Conditional Selection for dataframe
+booldf=df>0
+print(df[booldf]) #Nan if false
+print(df[df["X"]>0]) #conditional of column
+print(df[df["Z"]<0])
+print(df[df["Z"]<0]["X"])
+#Multiple COnditions
+print("And",df[((df["X"])>0&(df["Y"]>0))])
+print("Or",df[((df["X"])>0|(df["Y"]>0))])
+#How to reset index or set index to something else
+#reset to default
+# df.reset_index(inplace=True)
+print(df) #resets to numerical index
+newindex="CA NY WY OR".split()
+print(newindex)
+df["States"]=newindex
+print(df)
+df.set_index("States",inplace=True)
+print(df)
