@@ -73,3 +73,21 @@ df["States"]=newindex
 print(df)
 df.set_index("States",inplace=True)
 print(df)
+"""
+Data Frames Part 3
+"""
+outside=["G1",'G1','G1','G2',"G2","G2"]
+inside=[1,2,3,1,2,3]
+hier_index=list(zip(outside,inside))
+hier_index=pd.MultiIndex.from_tuples(hier_index)
+print(hier_index)
+df=pd.DataFrame(randn(6,2),hier_index,["A","B"])
+print(df.loc['G1'].loc[1])#index of outside then index of inside
+print(df.index.names) #names of index's
+df.index.names=["Groups","Num"] #multi-index names
+print((df.loc["G2"].loc[2]))
+#Cross section
+print(df.xs("G1")) # same as df.loc["G1"]
+#or can get you an index from two different outer index
+print(df.xs(1,level="Num"))
+#Lessosn Learned are multiindex, grabbing from multindex and cross section
