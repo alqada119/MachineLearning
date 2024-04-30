@@ -91,3 +91,16 @@ print(df.xs("G1")) # same as df.loc["G1"]
 #or can get you an index from two different outer index
 print(df.xs(1,level="Num"))
 #Lessosn Learned are multiindex, grabbing from multindex and cross section
+"""
+Part 4: Missing Data
+"""
+d={"A":[1,2,np.nan],'B':[5,np.nan,np.nan],'C':[1,2,3]}
+df=pd.DataFrame(d)
+print(df)
+#How to drop missing values
+# df=df.dropna(axis=0) #row
+# df=df.dropna(axis=1) #col
+# df=df.dropna(thresh=2)
+print(df) #sicne row 1 has atleast 2 non na value swe keep it
+df=df.fillna(value="Missing")
+print(df) #fill missing value
