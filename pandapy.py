@@ -116,4 +116,19 @@ print(Comp.mean(numeric_only=True)) # New change now standard is False for this
 print(Comp.sum().loc["Meta"]) #Get specific Meta Sum
 print(Comp.count()) # 3 people work for microsoft and 3 sales for them etc
 print(Comp.describe().transpose()) #Get all aggregate functions VVVV Important
+"""
+Concatentation
+"""
+df1=pd.DataFrame({'Key':[1,2,3],'A':["A","B","C"],'B':["D","E","F"]})
+df2=pd.DataFrame({'Key':[1,2,4],'C':["C","C","C"],'D':["D","E","F"]})
+df3=pd.concat([df1,df2])
+print(df3) #concatetated by row
+df4=pd.concat([df1,df2],axis=1) #by col most used
+print(df4)
+df5=pd.merge(df1,df2,how='inner',on='Key') #on is the most important part, where they share keys merge
+print(df5)
+#You can also pass on list of on
+# df6=pd.merge(df1,df2,on=["Key","sth"])
+#Join
+#Join is merge done on two different index columns
 
