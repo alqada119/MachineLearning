@@ -104,3 +104,16 @@ print(df)
 print(df) #sicne row 1 has atleast 2 non na value swe keep it
 df=df.fillna(value="Missing")
 print(df) #fill missing value
+"""
+Groupby
+"""
+data={'Company':['Google','Google',"Microsoft",'Microsoft','Microsoft','Meta'],'Person':['Ahmed','Anas','Donna','Tala','Isaac','Christian'],'Sales':[100,120,140,160,180,200]}
+exceldf=pd.DataFrame(data)
+exceldf.index.names=["Order"]
+print(exceldf)
+Comp=exceldf.groupby('Company') #GroupBy returns an object which you can perform multiple aggregate functions on
+print(Comp.mean(numeric_only=True)) # New change now standard is False for this
+print(Comp.sum().loc["Meta"]) #Get specific Meta Sum
+print(Comp.count()) # 3 people work for microsoft and 3 sales for them etc
+print(Comp.describe().transpose()) #Get all aggregate functions VVVV Important
+
