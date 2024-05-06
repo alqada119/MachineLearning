@@ -144,4 +144,3 @@ df.sort_values(by="col2")
 print(df)
 print(df.columns)
 print(df.isnull()) #Very Useful
-print(df.pivot_table(values="col2",index=["col1","col3"],columns=))
