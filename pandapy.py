@@ -131,4 +131,17 @@ print(df5)
 # df6=pd.merge(df1,df2,on=["Key","sth"])
 #Join
 #Join is merge done on two different index columns
-
+df=pd.DataFrame({
+    "col1":[100,123,145],
+    "col2":[100,3,145],
+    "col3":[100,123,145]
+})
+print(df)
+print(df.head())
+print(df["col2"].unique())
+print(df.index)
+df.sort_values(by="col2")
+print(df)
+print(df.columns)
+print(df.isnull()) #Very Useful
+print(df.pivot_table(values="col2",index=["col1","col3"],columns=))
