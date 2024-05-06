@@ -131,16 +131,34 @@ print(df5)
 # df6=pd.merge(df1,df2,on=["Key","sth"])
 #Join
 #Join is merge done on two different index columns
-df=pd.DataFrame({
-    "col1":[100,123,145],
-    "col2":[100,3,145],
-    "col3":[100,123,145]
-})
-print(df)
-print(df.head())
-print(df["col2"].unique())
-print(df.index)
-df.sort_values(by="col2")
-print(df)
-print(df.columns)
-print(df.isnull()) #Very Useful
+# df=pd.DataFrame({
+#     "col1":[100,123,145],
+#     "col2":[100,3,145],
+#     "col3":[100,123,145]
+# })
+# print(df)
+# print(df.head())
+# print(df["col2"].unique())
+# print(df.index)
+# df.sort_values(by="col2")
+# print(df)
+# print(df.columns)
+# print(df.isnull()) #Very Useful
+"""
+Read and write pandas
+"""
+# df=pd.read_csv("example.csv")
+# print(df) #How to read
+df=pd.DataFrame({"Test":[1,2,3]})
+df.to_csv("My_output",index=False)
+print(pd.read_csv("My_output"))
+# print(pd.read_excel("Excel.xlsx",sheet_name="Sheet1")) #How to read from excel
+# df.to_excel("Test.xlsx",sheet_name="Sheet1")
+# data=pd.read_html("https://www.fdic.gov/resources/resolutions/bank-failures/failed-bank-list/index.html")
+# print(data)
+#How to read sql
+from sqlalchemy import create_engine
+engine=create_engine("sqlite:///:memory:")
+df.to_sql("my_table",engine)
+sqldf=pd.read_sql("my_table",con=engine)
+print(sqldf)
