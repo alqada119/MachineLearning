@@ -157,8 +157,47 @@ print(pd.read_csv("My_output"))
 # data=pd.read_html("https://www.fdic.gov/resources/resolutions/bank-failures/failed-bank-list/index.html")
 # print(data)
 #How to read sql
-from sqlalchemy import create_engine
-engine=create_engine("sqlite:///:memory:")
-df.to_sql("my_table",engine)
-sqldf=pd.read_sql("my_table",con=engine)
-print(sqldf)
+# from sqlalchemy import create_engine
+# engine=create_engine("sqlite:///:memory:")
+# df.to_sql("my_table",engine)
+# sqldf=pd.read_sql("my_table",con=engine)
+# print(sqldf)
+"""
+Matplot Lib
+"""
+import matplotlib.pyplot as plt
+plt.show()
+x=np.linspace(0,5,11)
+y=x**2
+print(x,y)
+# #functional
+# plt.plot(x,y)
+# # plt.show() #How to show the plt
+# plt.xlabel("X Label")
+# plt.ylabel("Y Label")
+# plt.title("Title")
+# plt.show()
+# plt.subplot(1,2,1)
+# plt.plot(x,y,"r")
+# plt.subplot(1,2,2)
+# plt.plot(y,x)
+# plt.show()
+
+"""
+Object Oriented
+"""
+fig=plt.figure()
+axes=fig.add_axes((0.1,0.1,0.8,0.8))
+axes2=fig.add_axes((0.2,0.5,0.4,0.3))
+#Left Bottom Width Height in relation to canvas
+axes.plot(x,y)
+axes.set_title("Main")
+axes.set_xlabel("X Label")
+axes.set_ylabel("Y Label")
+axes2.plot(y,x)
+axes2.set_title("Inverse")
+plt.show()
+
+
+
+
