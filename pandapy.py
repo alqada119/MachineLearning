@@ -196,18 +196,26 @@ Object Oriented
 # axes.set_ylabel("Y Label")
 # axes2.plot(y,x)
 # axes2.set_title("Inverse")
-fig,axes=plt.subplots(nrows=1,ncols=2)
+# fig,axes=plt.subplots(nrows=1,ncols=2)
 # axes.plot(x,y)
 # for curr in axes:
 #     curr.plot(x,y)
-axes[0].plot(x,y)
-axes[1].plot(y,x)
-axes[0].set_title("First")
-axes[1].set_title("Second")
-plt.show()
+# axes[0].plot(x,y)
+# axes[1].plot(y,x)
+# axes[0].set_title("First")
+# axes[1].set_title("Second")
+# plt.show()
 """
 Second method of subplots much easier than manual way above
 """
+fig,axes=plt.subplots(nrows=1,ncols=1,figsize=(10,2)) #window size of matplot graph
+axes.plot(x,y)
+plt.show()
+"""
+How to save fig to a file
+"""
+fig.savefig("matplot.png")
+
 
 
 
