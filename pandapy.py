@@ -220,17 +220,30 @@ Legends
 # axes.legend(loc=1) #numcoded location for legend
 # fig.savefig("Matplotwithlabels.jpg")
 # plt.show()
-x=np.linspace(0,5,11)
-y=x**2
-fig=plt.figure()
-axes=fig.add_axes((0,0,1,1))
-axes.plot(x,y,color="purple",linewidth=2,linestyle="--",marker="o",markersize=10) #accepts hex as well alpha for transparency marker for data points
+# x=np.linspace(0,5,11)
+# y=x**2
+# fig=plt.figure()
+# axes=fig.add_axes((0,0,1,1))
+# axes.plot(x,y,color="purple",linewidth=2,linestyle="--",marker="o",markersize=10) #accepts hex as well alpha for transparency marker for data points
 
 # axes.set_xlim([0,1])
 # axes.set_ylim([0,1]) #set axes limit
 """
 Special Plot Types ----> Seaborn
 """
-plt.show()
+# plt.show()
+"""
+SEABORN
+________
+"""
+#What is it?
+import seaborn as sns
+tips=sns.load_dataset("tips")
+print(tips)
+sns.displot(tips["total_bill"],kde=False,bins=30) #pass col
+sns.jointplot(x="total_bill",y="tip",data=tips)
 
+
+
+plt.show()
 
