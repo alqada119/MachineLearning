@@ -186,18 +186,28 @@ print(x,y)
 """
 Object Oriented
 """
-fig=plt.figure()
-axes=fig.add_axes((0.1,0.1,0.8,0.8))
-axes2=fig.add_axes((0.2,0.5,0.4,0.3))
-#Left Bottom Width Height in relation to canvas
-axes.plot(x,y)
-axes.set_title("Main")
-axes.set_xlabel("X Label")
-axes.set_ylabel("Y Label")
-axes2.plot(y,x)
-axes2.set_title("Inverse")
+# fig=plt.figure()
+# axes=fig.add_axes((0.1,0.1,0.8,0.8))
+# axes2=fig.add_axes((0.2,0.5,0.4,0.3))
+# #Left Bottom Width Height in relation to canvas
+# axes.plot(x,y)
+# axes.set_title("Main")
+# axes.set_xlabel("X Label")
+# axes.set_ylabel("Y Label")
+# axes2.plot(y,x)
+# axes2.set_title("Inverse")
+fig,axes=plt.subplots(nrows=1,ncols=2)
+# axes.plot(x,y)
+# for curr in axes:
+#     curr.plot(x,y)
+axes[0].plot(x,y)
+axes[1].plot(y,x)
+axes[0].set_title("First")
+axes[1].set_title("Second")
 plt.show()
-
+"""
+Second method of subplots much easier than manual way above
+"""
 
 
 
