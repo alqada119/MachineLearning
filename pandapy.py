@@ -239,11 +239,15 @@ ________
 #What is it?
 import seaborn as sns
 tips=sns.load_dataset("tips")
-print(tips)
-sns.displot(tips["total_bill"],kde=False,bins=30) #pass col
-sns.jointplot(x="total_bill",y="tip",data=tips)
-
-
-
+# print(tips)
+# sns.displot(tips["total_bill"],kde=False,bins=30) #pass col
+# sns.jointplot(x="total_bill",y="tip",data=tips)
+# sns.barplot(x="sex",y="total_bill",data=tips,estimator=np.std)
+# sns.countplot(x="sex",data=tips)
+# sns.boxplot(x="day",y="total_bill",data=tips,hue="smoker") #hue is another layer
+# sns.violinplot(x="day",y="total_bill",data=tips,hue="smoker")
+# sns.stripplot(x="day",y="total_bill",data=tips,jitter=True) #Jitter for overlayign points
+sns.violinplot(x="day",y="total_bill",data=tips,color="black")
+sns.swarmplot(x="day",y="total_bill",data=tips)
 plt.show()
 
