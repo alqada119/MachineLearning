@@ -209,12 +209,17 @@ Object Oriented
 Second method of subplots much easier than manual way above
 """
 fig,axes=plt.subplots(nrows=1,ncols=1,figsize=(10,2)) #window size of matplot graph
-axes.plot(x,y)
-plt.show()
+axes.plot(x,y,label="Main")
+axes.plot(y,x,label="Inverse")
 """
 How to save fig to a file
 """
-fig.savefig("matplot.png")
+"""
+Legends
+"""
+axes.legend(loc=1) #numcoded location for legend
+fig.savefig("Matplotwithlabels.jpg")
+plt.show()
 
 
 
