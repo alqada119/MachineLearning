@@ -247,7 +247,12 @@ tips=sns.load_dataset("tips")
 # sns.boxplot(x="day",y="total_bill",data=tips,hue="smoker") #hue is another layer
 # sns.violinplot(x="day",y="total_bill",data=tips,hue="smoker")
 # sns.stripplot(x="day",y="total_bill",data=tips,jitter=True) #Jitter for overlayign points
-sns.violinplot(x="day",y="total_bill",data=tips,color="black")
-sns.swarmplot(x="day",y="total_bill",data=tips)
+# sns.violinplot(x="day",y="total_bill",data=tips,color="black")
+# sns.swarmplot(x="day",y="total_bill",data=tips)
+flights=sns.load_dataset("flights")
+# print(flights.head())
+# sns.heatmap(tc,cmap="cool")
+# plt.show()
+sns.heatmap(flights.pivot_table(index="month",columns="year",values="passengers",observed=False))
 plt.show()
 
