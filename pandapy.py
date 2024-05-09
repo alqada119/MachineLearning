@@ -288,3 +288,7 @@ df=pd.DataFrame(np.random.randn(2,4),columns="A B C D".split())
 df2=pd.DataFrame({"Category":["A","B","C","D"],"Vaalues":[32,34,23,20]})
 df.iplot()
 # plt.show()
+"""
+Skipped Geographical plotting section
+TODO:Machine Learning Section
+"""
