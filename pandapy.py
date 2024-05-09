@@ -268,9 +268,9 @@ iris=sns.load_dataset("iris")
 Regression Plots
 """
 # sns.lmplot(x="total_bill",y="tip",data=tips,hue="sex")
-sns.lmplot(x="total_bill",y="tip",data=tips,col="sex",row="time")
-
-
-
+# sns.lmplot(x="total_bill",y="tip",data=tips,col="sex",row="time")
+df=pd.DataFrame(data={"name":["ahmed","anas","donna"],"age":[20,22,24]})
+df.index=["I","am","gay"]
+df.plot.hist()
 plt.show()
 
