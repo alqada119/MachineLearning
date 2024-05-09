@@ -261,8 +261,16 @@ iris=sns.load_dataset("iris")
 # grid.map_diag(sns.distplot)
 # grid.map_upper(plt.scatter)
 # grid.map_lower(sns.kdeplot)
-grid=sns.FacetGrid(data=tips,col="time",row="smoker")
+# grid=sns.FacetGrid(data=tips,col="time",row="smoker")
 # grid.map(sns.distplot,"total_bill")
-grid.map(plt.scatter,"total_bill","tip") #pass extra arguments based on grapb
+# grid.map(plt.scatter,"total_bill","tip") #pass extra arguments based on grapb
+"""
+Regression Plots
+"""
+# sns.lmplot(x="total_bill",y="tip",data=tips,hue="sex")
+sns.lmplot(x="total_bill",y="tip",data=tips,col="sex",row="time")
+
+
+
 plt.show()
 
