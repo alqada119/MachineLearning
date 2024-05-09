@@ -269,8 +269,22 @@ Regression Plots
 """
 # sns.lmplot(x="total_bill",y="tip",data=tips,hue="sex")
 # sns.lmplot(x="total_bill",y="tip",data=tips,col="sex",row="time")
-df=pd.DataFrame(data={"name":["ahmed","anas","donna"],"age":[20,22,24]})
-df.index=["I","am","gay"]
-df.plot.hist()
-plt.show()
+# df=pd.DataFrame(data={"name":["ahmed","anas","donna"],"age":[20,22,24]})
+# df.index=["I","am","gay"]
+# df.plot.hist()
+# plt.show()
+"""
+Interactive Visualizations
+"""
+from plotly import __version__
+import cufflinks as cf
+from plotly.offline import download_plotlyjs,iplot,plot,init_notebook_mode
+import chart_studio.plotly as py
 
+init_notebook_mode(connected=True)
+cf.go_offline()
+#Data
+df=pd.DataFrame(np.random.randn(2,4),columns="A B C D".split())
+df2=pd.DataFrame({"Category":["A","B","C","D"],"Vaalues":[32,34,23,20]})
+df.iplot()
+# plt.show()
