@@ -49,6 +49,25 @@ print(LinearModel.intercept_)
 print(LinearModel.coef_)
 cdf=pd.DataFrame(LinearModel.coef_,X.columns,columns=["Coeff"])
 print(cdf)
-from sklearn.datasets import fetch_california_housing
-cali=fetch_california_housing()
-print(cali)
+# from sklearn.datasets import fetch_california_housing
+# cali=fetch_california_housing()
+# print(cali)
+predictions=LinearModel.predict(X_test)
+print(predictions) #We can compare to y_test
+plt.scatter(y_test,predictions)
+sns.displot((y_test-predictions)) #Normal dist means correct choice of model
+"""
+Regression Evaluation MEtrics:
+1-MAE (Mean absolute of error)
+2-MSE (Mean squared error)
+3-RMSE (Root Mean Squared Error Best)
+"""
+from sklearn import metrics
+print(metrics.mean_absolute_error(y_test,predictions))
+print(metrics.mean_squared_error(y_test,predictions))
+print(metrics.root_mean_squared_error(y_test,predictions))
+"""
+How to Evaluate model
+"""
+
+# plt.show()
