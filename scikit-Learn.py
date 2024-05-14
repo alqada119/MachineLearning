@@ -62,14 +62,28 @@ Regression Evaluation MEtrics:
 2-MSE (Mean squared error)
 3-RMSE (Root Mean Squared Error Best)
 """
-from sklearn import metrics
-print(metrics.mean_absolute_error(y_test,predictions))
-print(metrics.mean_squared_error(y_test,predictions))
-print(metrics.root_mean_squared_error(y_test,predictions))
+# from sklearn import metrics
+# print(metrics.mean_absolute_error(y_test,predictions))
+# print(metrics.mean_squared_error(y_test,predictions))
+# print(metrics.root_mean_squared_error(y_test,predictions))
 """
 How to Evaluate model
 Finished Part 1 of project,
 reached on printing model coefficients
 """
-
+customers=pd.read_csv("Ecommerce Customers")
+print(customers.head())
+print(customers.info())
+X=customers[['Avg. Session Length', 'Time on App',
+       'Time on Website', 'Length of Membership']]
+y=customers["Yearly Amount Spent"]
+print(X.shape,y.shape)
+X_train,y_train,X_test,y_test=train_test_split(X,y,test_size=0.3,random_state=101)
+lm=LinearRegression()
+lm.fit(X_train,y_train)
+# print(lm.coef_)
 # plt.show()
+"""
+Error Faced:
+Found input variables with inconsistent numbers of samples: [350, 150]
+"""
