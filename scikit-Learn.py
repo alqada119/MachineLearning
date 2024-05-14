@@ -68,6 +68,8 @@ print(metrics.mean_squared_error(y_test,predictions))
 print(metrics.root_mean_squared_error(y_test,predictions))
 """
 How to Evaluate model
+Finished Part 1 of project,
+reached on printing model coefficients
 """
 
 # plt.show()
