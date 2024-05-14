@@ -87,3 +87,28 @@ lm.fit(X_train,y_train)
 Error Faced:
 Found input variables with inconsistent numbers of samples: [350, 150]
 """
+
+"""
+Logistic Regression is another binary classification model.
+Unlike Linear which is one continous value.
+Sigmoid aka logistic outputs between 0-1
+f(x)=1/(1+e^-x) #always 0-1
+The key here is that the y value will always be
+that after the cutoff point usually 0.5
+2 classes generate meaning
+if less than 0.5 then 0 class
+if more than 0.5 then 1 class
+This model's test data is evaluated by
+a confusion matrix.
+Example Testing for a disease
+165 tests done
+TP: predicted positive and is actual P
+TN: predicted negative and is actual N
+Adding both of those and dividing by total
+gets you accuracy.
+FP: predicted positive but actual not P Type1
+FN: predicted negative but actual not N Type2
+Example:
+TN=50,TP=100 then 150/165=91%
+Error Rate= 15/165 =9%
+"""
